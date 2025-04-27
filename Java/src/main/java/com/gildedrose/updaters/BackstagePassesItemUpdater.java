@@ -1,33 +1,28 @@
 package com.gildedrose.updaters;
 
 import com.gildedrose.Item;
+import com.gildedrose.qualitybehaviour.QualityIncreaseBehaviour;
 
-public class BackstagePassesItemUpdater implements ItemUpdater {
+public class BackstagePassesItemUpdater implements ItemUpdater, QualityIncreaseBehaviour {
 
     @Override
     public void update(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-
-            if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                if (item.sellIn < 11) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
-
-                if (item.sellIn < 6) {
-                    if (item.quality < 50) {
-                        item.quality = item.quality + 1;
-                    }
-                }
-            }
-        }
-
-        item.sellIn = item.sellIn - 1;
-
+        item.sellIn--;
         if (item.sellIn < 0) {
-            item.quality = item.quality - item.quality;
+            item.quality = 0;
+        } else {
+            int increase = determineQualityIncrease(item.sellIn);
+            increaseQuality(item, increase);
+        }
+    }
+
+    private int determineQualityIncrease(int sellIn) {
+        if (sellIn < 5) {
+            return 3;
+        } else if (sellIn < 10) {
+            return 2;
+        } else {
+            return 1;
         }
     }
 
