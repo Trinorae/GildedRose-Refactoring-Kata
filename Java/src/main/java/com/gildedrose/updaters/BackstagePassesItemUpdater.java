@@ -2,7 +2,7 @@ package com.gildedrose.updaters;
 
 import com.gildedrose.Item;
 
-public class BackstagePassesItemUpdater extends NormalItemUpdater {
+public class BackstagePassesItemUpdater implements ItemUpdater {
 
     @Override
     public void update(Item item) {
