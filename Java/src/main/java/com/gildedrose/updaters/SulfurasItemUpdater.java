@@ -10,7 +10,7 @@ public class SulfurasItemUpdater implements ItemUpdater {
     }
 
     @Override
-    public boolean canUpdate(Item item) {
+    public boolean accepts(Item item) {
         return "Sulfuras, Hand of Ragnaros".equals(item.name);
     }
 }

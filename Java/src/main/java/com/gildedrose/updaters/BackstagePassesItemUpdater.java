@@ -27,7 +27,7 @@ public class BackstagePassesItemUpdater implements ItemUpdater, IncreaseQualityB
     }
 
     @Override
-    public boolean canUpdate(Item item) {
+    public boolean accepts(Item item) {
         return "Backstage passes to a TAFKAL80ETC concert".equals(item.name);
     }
 }

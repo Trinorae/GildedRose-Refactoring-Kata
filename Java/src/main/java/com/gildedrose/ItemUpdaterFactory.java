@@ -22,7 +22,7 @@ public class ItemUpdaterFactory {
 
     public static ItemUpdater getItemUpdater(Item item) {
         return itemUpdaters.stream()
-            .filter(updater -> updater.canUpdate(item))
+            .filter(updater -> updater.accepts(item))
             .findFirst()
             .orElse(defaultUpdater);
     }

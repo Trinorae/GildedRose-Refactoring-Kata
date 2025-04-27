@@ -13,7 +13,7 @@ public class NormalItemUpdater implements ItemUpdater, DecreaseQualityBehaviour 
     }
 
     @Override
-    public boolean canUpdate(Item item) {
+    public boolean accepts(Item item) {
         return true;
     }
 }

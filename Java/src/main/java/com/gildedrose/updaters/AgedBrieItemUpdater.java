@@ -13,7 +13,7 @@ public class AgedBrieItemUpdater implements ItemUpdater, IncreaseQualityBehaviou
     }
 
     @Override
-    public boolean canUpdate(Item item) {
+    public boolean accepts(Item item) {
         return "Aged Brie".equals(item.name);
     }
 }

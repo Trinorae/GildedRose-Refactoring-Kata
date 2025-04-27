@@ -5,5 +5,5 @@ import com.gildedrose.Item;
 public interface ItemUpdater {
 
     void update(Item item);
-    boolean canUpdate(Item item);
+    boolean accepts(Item item);
 }

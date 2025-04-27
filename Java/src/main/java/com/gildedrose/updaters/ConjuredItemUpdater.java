@@ -13,7 +13,7 @@ public class ConjuredItemUpdater implements ItemUpdater, DecreaseQualityBehaviou
     }
 
     @Override
-    public boolean canUpdate(Item item) {
+    public boolean accepts(Item item) {
         return item.name != null && item.name.startsWith("Conjured");
     }
 }
