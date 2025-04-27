@@ -1,9 +1,9 @@
 package com.gildedrose.updaters;
 
 import com.gildedrose.Item;
-import com.gildedrose.qualitybehaviour.QualityIncreaseBehaviour;
+import com.gildedrose.qualitybehaviour.IncreaseQualityBehaviour;
 
-public class AgedBrieItemUpdater implements ItemUpdater, QualityIncreaseBehaviour {
+public class AgedBrieItemUpdater implements ItemUpdater, IncreaseQualityBehaviour {
 
     @Override
     public void update(Item item) {
